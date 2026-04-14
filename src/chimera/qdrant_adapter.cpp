@@ -38,6 +38,12 @@
  * (e.g. cpp-httplib or cpr) and replace the in-process simulation blocks
  * with real Qdrant REST API calls.
  *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Provide deterministic vector adapter behavior for local tests without Qdrant.
+ * Activation: Active when THEMIS_ENABLE_QDRANT is not defined.
+ * Production Delta: Uses in-memory simulation rather than Qdrant REST API calls.
+ * Removal Plan: Keep as test fallback; production builds should enable THEMIS_ENABLE_QDRANT.
+ *
  * @copyright MIT License
  */
 

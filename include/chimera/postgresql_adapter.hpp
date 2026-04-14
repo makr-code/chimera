@@ -80,6 +80,12 @@ namespace chimera {
  *       instance via libpqxx. When the driver is not linked the adapter
  *       operates in an in-process simulation mode suitable for unit testing
  *       without a running server.
+ *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Keep adapter contract testable without libpqxx/PostgreSQL runtime.
+ * Activation: Active when libpqxx integration is not linked/available.
+ * Production Delta: Uses in-memory simulation instead of PostgreSQL-backed execution.
+ * Removal Plan: Keep as test fallback; production deployments should use libpqxx integration.
  */
 class PostgreSQLAdapter : public IDatabaseAdapter {
 public:

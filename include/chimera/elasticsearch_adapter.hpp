@@ -80,6 +80,12 @@ namespace chimera {
  *       instance via the Elasticsearch REST API.  When the HTTP client is not
  *       linked the adapter operates in an in-process simulation mode suitable
  *       for unit testing without a running server.
+ *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Keep adapter behavior available for local/test runs without a live Elasticsearch cluster.
+ * Activation: Active when HTTP client integration is not linked/available.
+ * Production Delta: Uses in-memory simulation instead of Elasticsearch REST requests.
+ * Removal Plan: Keep as test fallback; production deployments should use live Elasticsearch integration.
  */
 class ElasticsearchAdapter : public IDatabaseAdapter {
 public:

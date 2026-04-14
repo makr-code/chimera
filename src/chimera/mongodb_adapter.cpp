@@ -37,6 +37,12 @@
  * Production deployments should link against libmongocxx and replace the
  * in-process simulation blocks with real mongocxx calls.
  *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Allow adapter-level integration tests without requiring a MongoDB server/driver.
+ * Activation: Active when THEMIS_ENABLE_MONGODB is not defined.
+ * Production Delta: Uses in-memory unordered_map simulation instead of mongocxx-backed persistence.
+ * Removal Plan: Keep as test/dev fallback; production builds should enable THEMIS_ENABLE_MONGODB.
+ *
  * @copyright MIT License
  */
 

@@ -42,6 +42,12 @@
  *   - Full-text search: POST /{index}/_search  (match query)
  *   - kNN vector search: POST /{index}/_search  (knn parameter, ES 8.x)
  *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Enable local/test adapter execution without a live Elasticsearch cluster.
+ * Activation: Active when real HTTP-driver integration is not compiled/used.
+ * Production Delta: Uses in-memory simulation instead of Elasticsearch REST calls.
+ * Removal Plan: Keep as fallback for tests; production deployments should use real backend integration.
+ *
  * @copyright MIT License
  */
 

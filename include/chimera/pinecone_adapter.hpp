@@ -87,6 +87,12 @@ namespace chimera {
  *       index via the Pinecone REST API. When the HTTP client is not linked
  *       the adapter operates in an in-process simulation mode suitable for
  *       unit testing without a running service.
+ *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Allow deterministic adapter tests without live Pinecone dependencies.
+ * Activation: Active when HTTP client integration is not linked/available.
+ * Production Delta: Uses in-memory simulation instead of Pinecone REST requests.
+ * Removal Plan: Keep as test fallback; production deployments should use live Pinecone integration.
  */
 class PineconeAdapter : public IDatabaseAdapter {
 public:

@@ -38,6 +38,12 @@
  * (e.g. cpp-httplib or cpr) and replace the in-process simulation blocks
  * with real Pinecone REST API calls.
  *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Support adapter verification without requiring a live Pinecone index.
+ * Activation: Active when real HTTP-driver integration is not compiled/used.
+ * Production Delta: Uses in-memory simulation instead of Pinecone REST API requests.
+ * Removal Plan: Keep as fallback for tests; production deployments should use real backend integration.
+ *
  * @copyright MIT License
  */
 

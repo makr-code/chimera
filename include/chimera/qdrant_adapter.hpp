@@ -83,6 +83,12 @@ namespace chimera {
  *       instance via the Qdrant REST API. When the HTTP client is not linked
  *       the adapter operates in an in-process simulation mode suitable for
  *       unit testing without a running server.
+ *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Provide a deterministic vector adapter path for tests without Qdrant service access.
+ * Activation: Active when HTTP client integration is not linked/available.
+ * Production Delta: Uses in-memory simulation instead of Qdrant REST requests.
+ * Removal Plan: Keep as test fallback; production deployments should use live Qdrant integration.
  */
 class QdrantAdapter : public IDatabaseAdapter {
 public:

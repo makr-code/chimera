@@ -38,6 +38,12 @@
  * (e.g. cpp-httplib or cpr) and replace the in-process simulation blocks
  * with real Weaviate REST/GraphQL API calls.
  *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Allow adapter testing and local development without a live Weaviate instance.
+ * Activation: Active when real HTTP-driver integration is not compiled/used.
+ * Production Delta: Uses in-memory simulation instead of Weaviate REST/GraphQL operations.
+ * Removal Plan: Keep as fallback for tests; production deployments should use real backend integration.
+ *
  * @copyright MIT License
  */
 

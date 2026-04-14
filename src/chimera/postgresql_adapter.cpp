@@ -37,6 +37,12 @@
  * Production deployments should link against libpqxx and replace the
  * in-process simulation blocks with real libpqxx calls.
  *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Allow adapter-level testing without requiring libpqxx/PostgreSQL runtime.
+ * Activation: Active when real libpqxx integration is not compiled/used.
+ * Production Delta: Uses in-memory simulation instead of PostgreSQL-backed execution.
+ * Removal Plan: Keep as fallback for tests; production deployments should use libpqxx integration.
+ *
  * @copyright MIT License
  */
 

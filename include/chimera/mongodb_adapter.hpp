@@ -77,6 +77,12 @@ namespace chimera {
  *       instance via the MongoDB C++ driver (mongocxx). When the driver is
  *       not linked the adapter operates in an in-process simulation mode
  *       suitable for unit testing without a running server.
+ *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Provide a deterministic adapter path when mongocxx/runtime MongoDB is unavailable.
+ * Activation: Active when MongoDB driver integration is not linked/available.
+ * Production Delta: Uses in-memory simulation state instead of live MongoDB persistence.
+ * Removal Plan: Keep as test fallback; production deployments should use mongocxx-backed mode.
  */
 class MongoDBAdapter : public IDatabaseAdapter {
 public:

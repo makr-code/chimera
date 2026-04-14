@@ -84,6 +84,12 @@ namespace chimera {
  *       instance via the Bolt protocol or Neo4j HTTP API. When the driver
  *       is not linked the adapter operates in an in-process simulation mode
  *       suitable for unit testing without a running server.
+ *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Keep graph adapter behavior testable without a live Neo4j backend.
+ * Activation: Active when Neo4j driver/HTTP integration is not linked/available.
+ * Production Delta: Uses in-memory simulation instead of Bolt/HTTP-backed graph execution.
+ * Removal Plan: Keep as test fallback; production deployments should use live Neo4j integration.
  */
 class Neo4jAdapter : public IDatabaseAdapter {
 public:

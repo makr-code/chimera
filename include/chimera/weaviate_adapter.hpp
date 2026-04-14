@@ -81,6 +81,12 @@ namespace chimera {
  *       instance via the Weaviate REST/GraphQL API. When the HTTP client
  *       is not linked the adapter operates in an in-process simulation mode
  *       suitable for unit testing without a running server.
+ *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Keep adapter behavior available for local tests without Weaviate infrastructure.
+ * Activation: Active when HTTP client integration is not linked/available.
+ * Production Delta: Uses in-memory simulation instead of Weaviate REST/GraphQL operations.
+ * Removal Plan: Keep as test fallback; production deployments should use live Weaviate integration.
  */
 class WeaviateAdapter : public IDatabaseAdapter {
 public:

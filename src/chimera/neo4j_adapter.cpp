@@ -37,6 +37,12 @@
  * HTTP client library) and replace the in-process simulation blocks with
  * real Bolt/HTTP API calls.
  *
+ * STUB/SIMULATION NOTE:
+ * Purpose: Keep graph adapter testable without live Neo4j infrastructure.
+ * Activation: Active when THEMIS_ENABLE_NEO4J is not defined.
+ * Production Delta: Uses in-memory simulation rather than Bolt/HTTP-backed graph operations.
+ * Removal Plan: Keep as fallback for tests; production builds should enable THEMIS_ENABLE_NEO4J.
+ *
  * @copyright MIT License
  */
 
