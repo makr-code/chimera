@@ -117,6 +117,16 @@ systems:
 - Include configuration files
 - Archive raw data
 
+**Runtime compliance artifacts (recommended):**
+- Persist `result_schema.json` for machine-readable result schema tracking.
+- Persist `standard_golden_baselines.json` as deterministic per-standard baseline reference.
+- Persist `dataset_provisioning.json` to capture seed/version/fingerprint for dataset reproducibility.
+
+**Seed vs runtime baseline boundary:**
+- `baselines/chimera/standard_golden_baselines.seed.json` is the repository-level static seed reference.
+- `standard_golden_baselines.json` is the runtime-emitted artifact for a concrete execution context.
+- Regression decisions should be based on runtime artifacts, while the repository seed documents intended baseline structure.
+
 ---
 
 ## 3. Configuration Format Overview
@@ -165,6 +175,23 @@ references:         # Citations
 - `references`: Citation database (recommended)
 - `execution`: Runtime config (has defaults)
 - `metrics`: Metric definitions (has defaults)
+
+### 3.4 Scope Boundaries and Non-Goals
+
+To keep benchmark interpretation precise, CHIMERA separates three layers:
+
+1. **Standard requirements layer**: definitions of required metrics/parameters per standard.
+2. **Runtime implementation layer**: currently implemented workload set in the harness.
+3. **Reporting layer**: standard-conform row schema and export artifacts.
+
+Important boundary:
+- A standard can be specified in requirements but still be only partially implemented at runtime.
+- Compliance claims should always reference both `is_fully_implemented` and runtime coverage artifacts.
+
+Explicit non-goals:
+- No claim of formal third-party certification status (for example, official TPC/MLPerf submission).
+- No hidden vendor-specific optimization path outside documented methodology.
+- No unconditional comparability claim across heterogeneous hardware without explicit normalization controls.
 
 ---
 

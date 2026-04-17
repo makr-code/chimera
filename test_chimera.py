@@ -315,7 +315,7 @@ class TestChimeraReporter:
         reporter.generate_html_report(str(output_path), include_plots=False)
         
         assert output_path.exists()
-        content = output_path.read_text()
+        content = output_path.read_text(encoding="utf-8")
         assert "CHIMERA" in content
         assert "Neutrality" in content
         assert "System A" in content
@@ -353,10 +353,10 @@ class TestIntegration:
         assert html_path.exists()
         
         # Verify content
-        csv_content = csv_path.read_text()
+        csv_content = csv_path.read_text(encoding="utf-8")
         assert all(name in csv_content for name in ['Alpha', 'Beta', 'Gamma'])
         
-        html_content = html_path.read_text()
+        html_content = html_path.read_text(encoding="utf-8")
         assert 'Neutrality' in html_content
         assert 'Statistical Analysis' in html_content
 

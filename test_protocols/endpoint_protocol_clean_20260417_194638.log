@@ -1,0 +1,44 @@
+[
+  {
+    "method": "GET",
+    "path": "/health",
+    "status": 200,
+    "ok": true,
+    "body": "{\"database\":\"themis\",\"status\":\"healthy\",\"uptime_seconds\":12734,\"version\":\"0.1.0\"}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/health",
+    "status": 404,
+    "ok": false,
+    "body": "{\"error\":true,\"message\":\"Endpoint not found\",\"status_code\":404}"
+  },
+  {
+    "method": "POST",
+    "path": "/query",
+    "status": 404,
+    "ok": false,
+    "body": "{\"error\":true,\"message\":\"Endpoint not found\",\"status_code\":404}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/query",
+    "status": 404,
+    "ok": false,
+    "body": "{\"error\":true,\"message\":\"Endpoint not found\",\"status_code\":404}"
+  },
+  {
+    "method": "POST",
+    "path": "/vector/search",
+    "status": 500,
+    "ok": false,
+    "body": "{\"error\":true,\"message\":\"Vector search failed: searchKnn: Query-Dimension passt nicht\",\"status_code\":500}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vector/search",
+    "status": 404,
+    "ok": false,
+    "body": "{\"error\":true,\"message\":\"Endpoint not found\",\"status_code\":404}"
+  }
+]

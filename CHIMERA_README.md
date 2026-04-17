@@ -131,6 +131,53 @@ See [MULTI_VENDOR_DEMO.md](MULTI_VENDOR_DEMO.md) for details on the multi-vendor
 
 Reports are generated in the `demo_reports/` directory.
 
+### Standard-Suite CLI (Compliance-focused)
+
+Use the `list` command to inspect standards, coverage, and compliance requirements:
+
+```bash
+python chimera_cli.py list --standards
+python chimera_cli.py list --search-standards rag
+python chimera_cli.py list --standard-details BEIR
+python chimera_cli.py list --standard-coverage
+python chimera_cli.py list --compliance MLPerf-Inference
+```
+
+### Runtime Compliance Artifacts
+
+During endurance runs, CHIMERA writes standard-focused artifacts to the result directory:
+
+- `result_schema.json`: Canonical schema definition for standard-conform result rows.
+- `standard_golden_baselines.json`: Deterministic golden baselines per benchmark standard.
+- `dataset_provisioning.json`: Reproducible dataset-provisioning manifest with fingerprint.
+
+In addition, the repository contains a static reference seed:
+
+- `baselines/chimera/standard_golden_baselines.seed.json`: Versioned repository seed for baseline intent.
+
+Interpretation boundary:
+
+- The repository seed is a static reference artifact.
+- `standard_golden_baselines.json` is the runtime-generated artifact for a concrete run context.
+
+These artifacts can be versioned and used for regression gating and auditability.
+
+### Scope Boundaries and Non-Goals
+
+CHIMERA separates three layers for standard-related claims:
+
+1. Standard requirements layer (required metrics/parameters per benchmark standard)
+2. Runtime implementation layer (actually implemented workload set)
+3. Reporting layer (schema-enriched result rows and exported artifacts)
+
+Non-goals:
+
+- CHIMERA does not claim official certification of external standards (for example, formal TPC or MLPerf submission status).
+- CHIMERA does not perform hidden vendor-specific tuning to improve one system's rank.
+- CHIMERA does not claim cross-hardware comparability without documented hardware and methodology controls.
+
+Compliance statements should always combine requirement definitions with runtime coverage (`is_fully_implemented`) and emitted runtime artifacts.
+
 ---
 
 ## Neutrality Guarantees

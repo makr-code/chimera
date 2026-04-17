@@ -166,6 +166,37 @@ python3 demo.py
 
 This generates example reports in `demo_reports/` directory.
 
+## Standard Compliance Artifacts
+
+During endurance runs, CHIMERA emits machine-readable compliance artifacts in the result directory:
+
+- `result_schema.json`: canonical schema for standard-conform result rows.
+- `standard_golden_baselines.json`: deterministic runtime baseline snapshot per standard.
+- `dataset_provisioning.json`: seed/version/fingerprint manifest for reproducible dataset provisioning.
+
+Repository boundary:
+
+- `baselines/chimera/standard_golden_baselines.seed.json` is a static repository seed reference.
+- `standard_golden_baselines.json` is the runtime-emitted artifact for a concrete execution context.
+
+Interpretation rule:
+
+- Compliance statements should combine requirement definitions, runtime coverage, and emitted runtime artifacts.
+
+## Scope Boundaries and Non-Goals
+
+CHIMERA separates three layers:
+
+1. Standard requirements layer (required metrics and parameters)
+2. Runtime implementation layer (currently implemented workloads)
+3. Reporting layer (schema-enriched rows and export artifacts)
+
+Non-goals:
+
+- No claim of formal third-party certification status (for example, official TPC or MLPerf submission).
+- No hidden vendor-specific optimization path outside documented methodology.
+- No unconditional comparability claim across heterogeneous hardware without explicit normalization controls.
+
 ## Report Contents
 
 ### 1. Neutrality Seal

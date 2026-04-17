@@ -38,9 +38,16 @@ from dataclasses import dataclass, asdict
 import base64
 from io import BytesIO
 
-from .statistics import StatisticalAnalyzer, DescriptiveStats
-from .colors import ColorBlindPalette, VendorNeutralStyle
-from .citations import CitationManager
+try:
+    # Package mode (e.g., import chimera.reporter)
+    from .statistics import StatisticalAnalyzer, DescriptiveStats
+    from .colors import ColorBlindPalette, VendorNeutralStyle
+    from .citations import CitationManager
+except ImportError:
+    # Script/flat mode (e.g., run_endurance.py imports reporter directly)
+    from statistics import StatisticalAnalyzer, DescriptiveStats
+    from colors import ColorBlindPalette, VendorNeutralStyle
+    from citations import CitationManager
 
 
 @dataclass

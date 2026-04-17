@@ -1,1 +1,31 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache/bytecode/test artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Tooling / local env files
+.python-version
+.env
+.env.*
+
+# Coverage
 .coverage
+.coverage.*
+htmlcov/

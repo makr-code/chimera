@@ -1,0 +1,8 @@
+ImportError while loading conftest 'C:\Projects\chimera\conftest.py'.
+__init__.py:59: in <module>
+    from .reporter import ChimeraReporter
+reporter.py:48: in <module>
+    from statistics import StatisticalAnalyzer, DescriptiveStats
+statistics.py:37: in <module>
+    import numpy as np
+E   ModuleNotFoundError: No module named 'numpy'

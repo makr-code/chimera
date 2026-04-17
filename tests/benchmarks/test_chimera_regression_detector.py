@@ -23,20 +23,18 @@
 """
 
 #!/usr/bin/env python3
-"""
-Unit tests for benchmarks/chimera/chimera_regression_detector.py
-
-Covers:
-- Regression detection for throughput (higher-is-better) and latency (lower-is-better)
-- Severity classification at each threshold boundary
-- Improvement detection
-- Blocking-regression gate
-- Report generation smoke test
-- Empty / seed baseline handling (no workloads → skip)
-- Partial overlap (workloads only in current, only in baseline)
-- Zero baseline values (division guard)
-- CLI exit codes via main()
-"""
+# Unit tests for benchmarks/chimera/chimera_regression_detector.py
+#
+# Covers:
+# - Regression detection for throughput (higher-is-better) and latency (lower-is-better)
+# - Severity classification at each threshold boundary
+# - Improvement detection
+# - Blocking-regression gate
+# - Report generation smoke test
+# - Empty / seed baseline handling (no workloads -> skip)
+# - Partial overlap (workloads only in current, only in baseline)
+# - Zero baseline values (division guard)
+# - CLI exit codes via main()
 
 from __future__ import annotations
 

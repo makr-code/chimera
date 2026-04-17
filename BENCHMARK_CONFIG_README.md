@@ -209,6 +209,33 @@ description: "Industry-leading performance"       # ❌ Promotional
 
 ## Configuration Sections
 
+### Runtime Compliance Artifacts
+
+In addition to static configuration files, CHIMERA runtime emits compliance artifacts into the result directory:
+
+- `result_schema.json`: canonical result-row schema for standard-conform reporting.
+- `standard_golden_baselines.json`: deterministic runtime baseline snapshot per benchmark standard.
+- `dataset_provisioning.json`: provisioning seed/version/fingerprint manifest for reproducibility.
+
+Boundary between repository seed and runtime output:
+
+- `baselines/chimera/standard_golden_baselines.seed.json` is a repository-level static seed reference.
+- `standard_golden_baselines.json` is runtime output and should be used for run-specific regression and audit decisions.
+
+### Scope Boundaries and Non-Goals
+
+CHIMERA standard interpretation should always separate:
+
+1. Requirements layer (standard definitions)
+2. Runtime layer (implemented workloads and runtime coverage)
+3. Reporting layer (schema-enriched outputs)
+
+Non-goals:
+
+- No claim of formal external certification status unless explicitly stated by the external standard body.
+- No hidden vendor-specific optimization path outside documented benchmark methodology.
+- No unconditional cross-hardware comparability claim without documented normalization controls.
+
 ### 1. Metadata
 
 ```yaml

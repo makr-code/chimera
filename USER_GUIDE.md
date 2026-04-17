@@ -83,6 +83,31 @@ python demo.py
 
 Check `demo_reports/` directory for generated reports.
 
+## Standard Compliance Artifacts and Boundaries
+
+For reproducible and auditable standard claims, CHIMERA writes runtime artifacts to the result directory:
+
+- `result_schema.json`: machine-readable schema for standard-conform result rows.
+- `standard_golden_baselines.json`: deterministic per-standard runtime baseline snapshot.
+- `dataset_provisioning.json`: provisioning seed/version/fingerprint for dataset reproducibility.
+
+Seed vs runtime baseline boundary:
+
+- `baselines/chimera/standard_golden_baselines.seed.json` is a static repository seed reference.
+- `standard_golden_baselines.json` is generated during runtime for the active execution context.
+
+Scope boundary:
+
+1. Requirements layer: standard definitions and required metrics
+2. Runtime layer: implemented workloads and runtime coverage
+3. Reporting layer: emitted schema and export artifacts
+
+Non-goals:
+
+- No formal third-party certification claim (for example, official TPC or MLPerf submission status).
+- No hidden vendor-specific optimization path.
+- No cross-hardware comparability claim without explicit normalization controls.
+
 ## Database Adapter Usage
 
 ### Relational Operations

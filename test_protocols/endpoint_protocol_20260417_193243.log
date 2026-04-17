@@ -1,0 +1,44 @@
+[
+  {
+    "method": "GET",
+    "path": "/health",
+    "status": 429,
+    "ok": false,
+    "body": "{\"error\":\"Too Many Requests\",\"message\":\"Rate limit exceeded. Please retry after 1 seconds.\",\"retry_after_seconds\":1,\"status_code\":429}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/health",
+    "status": 429,
+    "ok": false,
+    "body": "{\"error\":\"Too Many Requests\",\"message\":\"Rate limit exceeded. Please retry after 1 seconds.\",\"retry_after_seconds\":1,\"status_code\":429}"
+  },
+  {
+    "method": "POST",
+    "path": "/query",
+    "status": 429,
+    "ok": false,
+    "body": "{\"error\":\"Too Many Requests\",\"message\":\"Rate limit exceeded. Please retry after 1 seconds.\",\"retry_after_seconds\":1,\"status_code\":429}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/query",
+    "status": 429,
+    "ok": false,
+    "body": "{\"error\":\"Too Many Requests\",\"message\":\"Rate limit exceeded. Please retry after 1 seconds.\",\"retry_after_seconds\":1,\"status_code\":429}"
+  },
+  {
+    "method": "POST",
+    "path": "/vector/search",
+    "status": 429,
+    "ok": false,
+    "body": "{\"error\":\"Too Many Requests\",\"message\":\"Rate limit exceeded. Please retry after 1 seconds.\",\"retry_after_seconds\":1,\"status_code\":429}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vector/search",
+    "status": 429,
+    "ok": false,
+    "body": "{\"error\":\"Too Many Requests\",\"message\":\"Rate limit exceeded. Please retry after 1 seconds.\",\"retry_after_seconds\":1,\"status_code\":429}"
+  }
+]
