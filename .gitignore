@@ -25,6 +25,12 @@ dist/
 .env
 .env.*
 
+# Local workspace/runtime artifacts
+.vscode/
+*.code-workspace
+endurance_results/
+endurance_results_quick/
+
 # Coverage
 .coverage
 .coverage.*
